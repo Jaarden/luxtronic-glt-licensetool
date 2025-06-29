@@ -54,7 +54,6 @@ After that, you will see the following screen:
 Afterwards, BMS is unlocked
 
 ![alt text](https://github.com/Jaarden/luxtronic-glt-licensetool/blob/main/images/screen3.png "Screen 3")
-<<<<<<< HEAD
 
 
 ## Enabling the BMS using root access
