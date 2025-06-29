@@ -43,11 +43,14 @@ Creates an USB drive that unlocks the BMS functionality on an Luxtronic managed 
 
 Afterwards, plug it in into a heatpump. In this case an Alpha Innotec and watch for the house symbol. It can take some trail and error to get it working. It took me 5-10 inserts to had it detect the USB properly.
 
+![alt text](https://github.com/Jaarden/luxtronic-glt-licensetool/blob/main/images/screen1.png "Screen 1")
 ![[images/screen1.png]]
+
 After that, you will see the following screen:
 
 
-![[images/screen2.png]]
+![alt text](https://github.com/Jaarden/luxtronic-glt-licensetool/blob/main/images/screen2.png "Screen 2")
 
 Afterwards, BMS is unlocked
-![[images/screen3.png]]
+
+![alt text](https://github.com/Jaarden/luxtronic-glt-licensetool/blob/main/images/screen3.png "Screen 3")
