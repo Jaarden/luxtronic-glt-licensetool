@@ -1,5 +1,6 @@
 # BMS license creator
-Creates an USB drive that unlocks the BMS functionality on an Luxtronic managed heatpump
+Creates an USB drive that unlocks the BMS functionality on an Luxtronic managed heatpump.
+!! USE AT YOUR OWN RISK, i will not help unbricking heat pumps !!
 
 ```
 	Usage: ./licensetool <usb_path> [command] [license_count]
@@ -54,3 +55,51 @@ After that, you will see the following screen:
 Afterwards, BMS is unlocked
 
 ![alt text](https://github.com/Jaarden/luxtronic-glt-licensetool/blob/main/images/screen3.png "Screen 3")
+
+
+## Enabling the BMS using root access
+This only works when your heatpump is vulnerable for: https://github.com/Jaarden/CVE-2024-22894
+
+To enable the BMS create a file on in `/home/` called `GLT.conf` with the following content:
+```
+Einst_GLT_akt;2;
+BACnetPort;47808;
+vendorname;Jaarden;
+vendor_id;123;
+modelname;Unlocked;
+location;Somewhere;
+device_description;YourDescription;
+device_id;50;
+devicename;HackedByJaarden;
+Einst_GLT_Fkt_Freigabe_akt;1;
+Einst_GLT_Fkt_Sollwert_akt;1;
+Einst_GLT_Fkt_Sollwert_MK1_akt;1;
+Einst_GLT_Fkt_Sollwert_MK2_akt;1;
+Einst_GLT_Fkt_Sollwert_MK3_akt;0;
+Einst_GLT_Fkt_Ba_Heizen_akt;1;
+Einst_GLT_Fkt_Ba_Brauchw_akt;1;
+Einst_GLT_Fkt_Ba_MK1_akt;1;
+Einst_GLT_Fkt_Ba_MK2_akt;1;
+Einst_GLT_Fkt_Ba_MK3_akt;0;
+Einst_GLT_Fkt_Ba_Kuehl_akt;1;
+Einst_GLT_Fkt_Ba_Lueftung_akt;0;
+Einst_GLT_Fkt_Ba_Schwimmbad_akt;0;
+```
+
+This results in the following screen under Service > Information  > BMS (Or GLT / GBS.... depending on your country):
+
+![alt text](https://github.com/Jaarden/luxtronic-glt-licensetool/blob/main/images/screen4.png "Screen 4")
+
+
+## Modbus
+To enable BACnet set the `Einst_GLT_akt` parameter in `GLT.conf` file to `1`
+```
+Einst_GLT_akt;2;
+```
+
+
+## BACNet
+To enable BACnet set the `Einst_GLT_akt` parameter in `GLT.conf` file to `1`
+```
+Einst_GLT_akt;1;
+
